@@ -1,0 +1,15 @@
+[package]
+name = "ethernaut-solutions"
+version = "0.1.0"
+edition = "2021"
+description = "solution of ethernauut in rust"
+repository = "https://github.com/advock/ethernaut-solutions"
+license = "MIT OR Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dotenv = "0.15.0"
+ethers = "1.0.2"
+eyre = "0.6"
+tokio = { version = "1.18", features = ["macros", "rt-multi-thread"] }
