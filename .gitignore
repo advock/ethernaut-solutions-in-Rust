@@ -1,4 +1,5 @@
 /target
 .cargo-ok
 .DS_Store
+.env
 
