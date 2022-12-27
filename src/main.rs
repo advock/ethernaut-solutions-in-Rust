@@ -1,16 +1,25 @@
 use dotenv::dotenv;
 use ethers::prelude::*;
 use eyre::Result;
+use std::string::String;
 use std::{convert::TryFrom, sync::Arc};
-
-abigen!(Fallout, "src/fallout.json");
 
 #[tokio::main]
 async fn main() -> Result<()> {
+    // uint256 blockValue = uint256(blockhash(block.number - 1));
+
+    // if (lastHash == blockValue) {
+    //     revert();
+    // }
+
+    // lastHash = blockValue;
+    // uint256 coinFlip = blockValue / FACTOR;
+    // bool side = coinFlip == 1 ? true : false;
     dotenv().ok();
 
     let url = dotenv::var("URL").unwrap();
     let Private_key = dotenv::var("PRIVATE_KEY").unwrap();
+
     let client = Arc::new({
         let client = Provider::<Http>::try_from(url)?;
         let chain_id = client.get_chainid().await?;
@@ -22,13 +31,13 @@ async fn main() -> Result<()> {
         SignerMiddleware::new(client, wallet)
     });
 
-    let address: H160 = "0x87878F04b3ba9e85034A32f1BC5d8CcA17841076".parse::<Address>()?;
+    let blockN = client.get_block_number().await.unwrap();
 
-    let falout = Fallout::new(address, client.clone());
+    let block = client.get_block(blockN).await?.unwrap();
 
-    let tx = falout.fal_1out().value(1).send().await?.await?;
+    let hash = block.hash;
 
-    print!("{:?}", tx);
+    print!("cggc{:?}", hash.unwrap());
 
     Ok(())
 }
