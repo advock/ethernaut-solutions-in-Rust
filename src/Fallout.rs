@@ -1,12 +1,12 @@
-use dotenv::dotenv;
 use ethers::prelude::*;
 use eyre::Result;
 use std::{convert::TryFrom, sync::Arc};
 
+use dotenv::dotenv;
+
 abigen!(Fallout, "src/fallout.json");
 
-#[tokio::main]
-async fn main() -> Result<()> {
+pub async fn fallo() -> Result<()> {
     dotenv().ok();
 
     let url = dotenv::var("URL").unwrap();
@@ -27,8 +27,6 @@ async fn main() -> Result<()> {
     let falout = Fallout::new(address, client.clone());
 
     let tx = falout.fal_1out().value(1).send().await?.await?;
-
-    print!("{:?}", tx);
 
     Ok(())
 }
