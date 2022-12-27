@@ -35,9 +35,12 @@ async fn main() -> Result<()> {
 
     let block = client.get_block(blockN).await?.unwrap();
 
-    let hash = block.hash;
+    let hashhhh = block.hash.unwrap();
 
-    print!("cggc{:?}", hash.unwrap());
+    let j = BigEndianHash::into_uint(&hashhhh);
+
+    print!("{:?}", j);
 
     Ok(())
 }
+//
