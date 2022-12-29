@@ -1,3 +1,6 @@
+the full repository is using Ethers-rs for the finding of CTF unless requirement of smart contract like in case of re-entrancy.
+best way get good at ether-rs.
+
 # ethernaut-solutions
 
 [![Crates.io](https://img.shields.io/crates/v/ethernaut-solutions.svg)](https://crates.io/crates/ethernaut-solutions)
