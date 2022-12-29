@@ -1,0 +1,42 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "_password",
+                "type": "bytes32"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "inputs": [],
+        "name": "locked",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "constant": true,
+        "signature": "0xcf309012"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "_password",
+                "type": "bytes32"
+            }
+        ],
+        "name": "unlock",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function",
+        "signature": "0xec9b5b3a"
+    }
+]
