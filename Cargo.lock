@@ -611,6 +611,7 @@ dependencies = [
  "ethers",
  "eyre",
  "tokio",
+ "vec",
 ]
 
 [[package]]
@@ -2367,6 +2368,12 @@ dependencies = [
  "getrandom",
  "serde",
 ]
+
+[[package]]
+name = "vec"
+version = "0.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "506ffaa891811c8df5208ab9f7d77754b493a70d0a1f8e9e760437b739adf810"
 
 [[package]]
 name = "version_check"

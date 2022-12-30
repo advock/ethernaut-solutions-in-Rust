@@ -13,3 +13,4 @@ dotenv = "0.15.0"
 ethers = "1.0.2"
 eyre = "0.6"
 tokio = { version = "1.18", features = ["macros", "rt-multi-thread"] }
+vec = "0.0.0"
