@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8;
+
 contract Bro {
     constructor(address _ad) {
         bytes8 key = bytes8(
